@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+<H3>MongoDB Action Result</H3>
+
+  Result Obj: {{ result  }} </p>
+  result.raw_result: {{ result.raw_result  }} </p>
+  result.acknowledged: {{ result.acknowledged  }} </p>
+  {% if result.inserted_count %}  result.inserted_count:  {{ result.inserted_count  }} </p>{% endif %}
+  {% if result.upserted_count %}  result.upserted_count:  {{ result.upserted_count  }} </p>{% endif %}
+  {% if result.upserted_ids %}    result.upserted_ids:    {{ result.upserted_ids    }} </p>{% endif %}
+  {% if result.inserted_id %}     result.inserted_id:     {{ result.inserted_id     }} </p>{% endif %}
+  {% if result.inserted_ids %}    result.inserted_ids:    {{ result.inserted_ids    }} </p>{% endif %}
+  {% if result.deleted_count %}   result.deleted_count:   {{ result.deleted_count   }} </p>{% endif %}
+  {% if result.matched_count %}   result.matched_count:   {{ result.matched_count   }} </p>{% endif %}
+  {% if result.modified_count %}  result.modified_count:  {{ result.modified_count  }} </p>{% endif %}
+  {% if result.upserted_id %}     result.upserted_id:     {{ result.upserted_id     }} </p>{% endif %}
+ 
+  
+  <form action="/" method="GET">
+    <input type="submit" value="ok"></input>
+  </form>
+
+  {% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<HTML lang="eng">
+<HEAD>
+    <meta charset="UTF-8"> 
+
+    <!-- If IE use the latest rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+
+    <!-- Set the page to the width of the device and set the zoon level -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+    <!-- Link in Bootstrap CDN -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block head %}{% endblock %}
+</HEAD>
+<BODY>
+    <div class="container">
+        
+        <H1>To Do List</H1>
+        {% block body %}{% endblock %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!-- Use downloaded version of Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+</BODY>
+</HTML>

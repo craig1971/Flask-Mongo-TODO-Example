@@ -1,0 +1,20 @@
+web:
+  container_name: TodoPyWeb
+  build: .
+  command: python -u app.py
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/todoPy
+  links:
+    - mongodb
+  environment:
+    - MONGODB_USER=
+    - MONGODB_PASS=
+mongodb:
+  container_name: TodoPyMongo
+  image: mongo:latest
+  ports:
+    - "27017:27017"
+  volumes:
+    - '/DockerServices/mongodbData:/data/db'

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block head %}
+  <Title>To Do: Details</Title> 
+{% endblock %}
+
+{% block body %}
+<div class="content">
+<table>
+  <tr>
+    <td colspan=3>
+      <form id="taskData" action="/item/update" method="POST">
+        Name: <input type="text" name="name" value="{{item.name}}"></input></p>
+        Description: <textArea rows="4" cols="50" name="description">{{item.description}}</textArea></p>
+        <input type="hidden" name="id" value="{{item._id}}"></input>
+
+        <button class="btn btn-warning">
+            Update 
+            <span class="glyphicon glyphicon-refresh"></span> 
+        </button>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <form action="/item/delete/{{item._id}}" method="POST">
+        <button class="btn btn-danger">
+          Delete 
+          <span class="glyphicon glyphicon-trash"></span> 
+        </button>
+      </form>
+    </td>
+    <td></td>
+    <td>
+      <form action="/" method="GET">
+        <button class="btn btn-info">
+          Back 
+          <span class="glyphicon glyphicon-share-alt"></span> 
+        </button>
+      </form>
+    </td>
+  </tr>
+</table>
+</div>
+
+{% endblock %}
